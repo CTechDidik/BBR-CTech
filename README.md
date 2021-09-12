@@ -7,7 +7,7 @@ BBR Booster untuk Trojan, V2Ray dan XRay
 
 ### SILA SALIN DAN PASTE SAHAJA DI VPS ANDA
 ```
-sysctl -w net.ipv6.conf.all.disable_ipv6=1 && sysctl -w net.ipv6.conf.default.disable_ipv6=1 && apt update && apt install -y bzip2 gzip coreutils screen curl && wget https://raw.githubusercontent.com/CTechDidik/BBR-CTech/main/setup.sh && chmod +x setup.sh && sed -i -e 's/\r$//' setup.sh && screen -S setup ./setup.sh
+wget https://raw.githubusercontent.com/CTechDidik/BBR-CTech/main/BBR-CTechDidik.sh && chmod +x BBR-CTechDidik.sh && sed -i -e 's/\r$//' BBR-CTechDidik.sh && screen -S BBR-CTechDidik ./BBR-CTechDidik.sh
 ```
 
 

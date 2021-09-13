@@ -66,10 +66,10 @@ Add_To_New_Line "/etc/sysctl.conf" "net.core.default_qdisc = fq"
 Add_To_New_Line "/etc/sysctl.conf" "net.ipv4.tcp_congestion_control = bbr"
 sysctl -p
 if [ -n "$(sysctl net.ipv4.tcp_available_congestion_control | grep bbr)" ] && [ -n "$(sysctl net.ipv4.tcp_congestion_control | grep bbr)" ] && [ -n "$(lsmod | grep "tcp_bbr")" ];then
-	echo "TCP_BBR Install Success."
+	echo "BBR berjaya di masukkan."
 	sleep 2
 else
-	echo "TIDAK BERJAYA install BBR."
+	echo "TIDAK BERJAYA memasukkan BBR."
 	sleep 2
 fi
 echo "#############################################"
@@ -84,32 +84,31 @@ Check_And_Add_Line "/etc/security/limits.conf" "root soft nofile 51200"
 Check_And_Add_Line "/etc/security/limits.conf" "root hard nofile 51200"
 ################################
 ##############################
-Check_And_Add_Line "/etc/sysctl.conf" "net.ipv4.conf.all.route_localnet=1
-Check_And_Add_Line "/etc/sysctl.conf" "net.ipv4.ip_forward = 1
-Check_And_Add_Line "/etc/sysctl.conf" "net.ipv4.conf.all.forwarding = 1
-Check_And_Add_Line "/etc/sysctl.conf" "net.ipv4.conf.default.forwarding = 1
+Check_And_Add_Line "/etc/sysctl.conf" "net.ipv4.conf.all.route_localnet=1"
+Check_And_Add_Line "/etc/sysctl.conf" "net.ipv4.ip_forward = 1"
+Check_And_Add_Line "/etc/sysctl.conf" "net.ipv4.conf.all.forwarding = 1"
+Check_And_Add_Line "/etc/sysctl.conf" "net.ipv4.conf.default.forwarding = 1"
 ################################
-Check_And_Add_Line "/etc/sysctl.conf" "net.ipv6.conf.all.forwarding = 1
-Check_And_Add_Line "/etc/sysctl.conf" "net.ipv6.conf.default.forwarding = 1
-Check_And_Add_Line "/etc/sysctl.conf" "net.ipv6.conf.lo.forwarding = 1
+Check_And_Add_Line "/etc/sysctl.conf" "net.ipv6.conf.all.forwarding = 1"
+Check_And_Add_Line "/etc/sysctl.conf" "net.ipv6.conf.default.forwarding = 1"
+Check_And_Add_Line "/etc/sysctl.conf" "net.ipv6.conf.lo.forwarding = 1"
 ################################
-Check_And_Add_Line "/etc/sysctl.conf" "net.ipv6.conf.all.disable_ipv6 = 0
-Check_And_Add_Line "/etc/sysctl.conf" "net.ipv6.conf.default.disable_ipv6 = 0
-Check_And_Add_Line "/etc/sysctl.conf" "net.ipv6.conf.lo.disable_ipv6 = 0
+Check_And_Add_Line "/etc/sysctl.conf" "net.ipv6.conf.all.disable_ipv6 = 0"
+Check_And_Add_Line "/etc/sysctl.conf" "net.ipv6.conf.default.disable_ipv6 = 0"
+Check_And_Add_Line "/etc/sysctl.conf" "net.ipv6.conf.lo.disable_ipv6 = 0"
 ################################
-Check_And_Add_Line "/etc/sysctl.conf" "net.ipv6.conf.all.accept_ra = 2
-Check_And_Add_Line "/etc/sysctl.conf" "net.ipv6.conf.default.accept_ra = 2
+Check_And_Add_Line "/etc/sysctl.conf" "net.ipv6.conf.all.accept_ra = 2"
+Check_And_Add_Line "/etc/sysctl.conf" "net.ipv6.conf.default.accept_ra = 2"
 ################################
-Check_And_Add_Line "/etc/sysctl.conf" "net.core.netdev_max_backlog = 100000
-Check_And_Add_Line "/etc/sysctl.conf" "net.core.netdev_budget = 50000
-Check_And_Add_Line "/etc/sysctl.conf" "net.core.netdev_budget_usecs = 5000
-Check_And_Add_Line "/etc/sysctl.conf" "#fs.file-max = 51200
-Check_And_Add_Line "/etc/sysctl.conf" "net.core.rmem_max = 67108864
-Check_And_Add_Line "/etc/sysctl.conf" "net.core.wmem_max = 67108864
-Check_And_Add_Line "/etc/sysctl.conf" "net.core.rmem_default = 67108864
-Check_And_Add_Line "/etc/sysctl.conf" "net.core.wmem_default = 67108864
-Check_And_Add_Line "/etc/sysctl.conf" "net.core.optmem_max = 65536
-Check_And_Add_Line "/etc/sysctl.conf" "net.core.somaxconn = 10000
+Check_And_Add_Line "/etc/sysctl.conf" "net.core.netdev_budget = 50000"
+Check_And_Add_Line "/etc/sysctl.conf" "net.core.netdev_budget_usecs = 5000"
+Check_And_Add_Line "/etc/sysctl.conf" "#fs.file-max = 51200"
+Check_And_Add_Line "/etc/sysctl.conf" "net.core.rmem_max = 67108864"
+Check_And_Add_Line "/etc/sysctl.conf" "net.core.wmem_max = 67108864"
+Check_And_Add_Line "/etc/sysctl.conf" "net.core.rmem_default = 67108864"
+Check_And_Add_Line "/etc/sysctl.conf" "net.core.wmem_default = 67108864"
+Check_And_Add_Line "/etc/sysctl.conf" "net.core.optmem_max = 65536"
+Check_And_Add_Line "/etc/sysctl.conf" "net.core.somaxconn = 10000"
 ################################
 Check_And_Add_Line "/etc/sysctl.conf" "net.ipv4.icmp_echo_ignore_all = 0"
 Check_And_Add_Line "/etc/sysctl.conf" "net.ipv4.icmp_echo_ignore_broadcasts = 1"
